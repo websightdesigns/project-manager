@@ -48,7 +48,7 @@ You will be prompted for the MySQL root password. Once you are on the MySQL comm
 
 If you prefer, you can create the database in phpMyAdmin and then set up a new user with permissions to access the new database under the Privileges tab.
 
-## 3. Importing Data
+## Importing Data
 
 You can use the included `install.sql` file to create the table structure.
 
