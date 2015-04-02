@@ -29,19 +29,21 @@
 	</div>
 	<div class="col-md-8 col-md-pull-4">
 		<div class="list-group activity-list">
-			<?php foreach ($actions as $action): ?>
-				<?php
-					if($action['Action']['status'] == "new") $status = "primary";
-					elseif($action['Action']['status'] == "accepted") $status = "success";
-					elseif($action['Action']['status'] == "inprogress") $status = "warning";
-					elseif($action['Action']['status'] == "rejected") $status = "danger";
-					elseif($action['Action']['status'] == "file") $status = "info";
-					else $status = $action['Action']['status'];
-				?>
-				<a href="<?php echo $this->webroot; ?>tickets/view/<?php echo $action['Action']['ticket_id']; ?>" class="list-group-item">
-					<p class="list-group-item-text"><span class="label label-status label-<? echo $status; ?>"><?php echo strtoupper($action['Action']['status']); ?></span> <i class="fa fa-ticket"></i> <strong><?php echo $action['User']['name']; ?></strong> <span class="action"><?php echo $action['Action']['action']; ?></span> <span class="label label-default">#<?php echo $action['Action']['ticket_id']; ?></span> <?php echo $action['Ticket']['title']; ?> <small>in <em class="text-muted"><?php echo $action['Project']['title']; ?></em></small></p>
-				</a>
-			<?php endforeach; ?>
+			<?php if(!empty($actions) && is_array($actions)) { ?>
+				<?php foreach ($actions as $action): ?>
+					<?php
+						if($action['Action']['status'] == "new") $status = "primary";
+						elseif($action['Action']['status'] == "accepted") $status = "success";
+						elseif($action['Action']['status'] == "inprogress") $status = "warning";
+						elseif($action['Action']['status'] == "rejected") $status = "danger";
+						elseif($action['Action']['status'] == "file") $status = "info";
+						else $status = $action['Action']['status'];
+					?>
+					<a href="<?php echo $this->webroot; ?>tickets/view/<?php echo $action['Action']['ticket_id']; ?>" class="list-group-item">
+						<p class="list-group-item-text"><span class="label label-status label-<? echo $status; ?>"><?php echo strtoupper($action['Action']['status']); ?></span> <i class="fa fa-ticket"></i> <strong><?php echo $action['User']['name']; ?></strong> <span class="action"><?php echo $action['Action']['action']; ?></span> <span class="label label-default">#<?php echo $action['Action']['ticket_id']; ?></span> <?php echo $action['Ticket']['title']; ?> <small>in <em class="text-muted"><?php echo $action['Project']['title']; ?></em></small></p>
+					</a>
+				<?php endforeach; ?>
+			<?php } ?>
 		</div>
 	</div>
 </div>

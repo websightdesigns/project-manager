@@ -1,9 +1,13 @@
 <!-- app/View/Projects/add.ctp -->
 <?php
 	$project_groups = array('0' => 'Add A New Project Group');
-	foreach($projects AS $key => $project) {
-		$id = $project['Project']['group'];
-		$project_groups[$id] = $project['Project']['group'];
+	if(!empty($projects) && is_array($projects)) {
+		foreach($projects AS $key => $project) {
+			if(!empty($project['Project']['group']) && isset($project['Project']['group'])) {
+				$id = $project['Project']['group'];
+				$project_groups[$id] = $project['Project']['group'];
+			}
+		}
 	}
 	$project_groups = array_unique($project_groups);
 

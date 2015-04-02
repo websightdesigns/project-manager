@@ -314,15 +314,13 @@ body {
 .monthtabs li:hover { background-color: #eee; }
 .monthtabs li.active { background-color: #e3e3e3; }
 .calendar {
-  width: 756px;
+  width: 100%;
   min-height: 450px;
   float: right;
   clear: none;
   position: relative;
-  background: #e3e3e3;
-  margin-top: 3px;
+  margin-top: 1em;
   margin-bottom: 3em;
-  padding: 0.5em;
 }
 .month {
   margin: 0;
@@ -330,7 +328,7 @@ body {
 .month.active { display: block; }
 .month:not(.active) { display: none; }
 .month header {
-  width: 744px;
+  width: 100%;
   color: #fff;
   background: #777;
   margin: 0;
@@ -338,7 +336,7 @@ body {
   text-align: center;
 }
 .day {
-  width: 12.3%;
+  width: 14.28571428571429%;
   height: 80px;
   margin: 0;
   background: #fff;
@@ -353,7 +351,7 @@ body {
 .day.active { background: #9CF9F9; }
 .day.active:hover { background: #00ffff; }
 .emptyday {
-  width: 12.3%;
+  width: 14.28571428571429%;
   height: 80px;
   margin: 0;
   background: #e3e3e3;
@@ -371,7 +369,7 @@ body {
   width: 100%;
 }
 .calendar-day-head {
-  width: 12.3%;
+  width: 14.28571428571429%;
   float: left;
   clear: none;
   margin: 0;
