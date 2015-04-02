@@ -14,16 +14,18 @@
 				</div>
 			</div>
 		</form>
-		<div class="list-group projects-list">
-			<span class="list-group-item list-group-item-title noselect">
-				<p class="list-group-item-text"><strong>My Assigned Projects</strong><span class="pull-right show-projects"><i class="fa fa-plus-square-o"></i></span></p>
-			</span>
-			<?php foreach($projects AS $project) { ?>
-			<a href="<?php echo $this->webroot; ?>projects/view/<?php echo $project['Project']['id']; ?>" class="list-group-item">
-				<p class="list-group-item-text"><?php echo $project['Project']['title']; ?></p>
-			</a>
-			<?php } ?>
-		</div>
+		<?php if(!empty($projects) && is_array($projects)) { ?>
+			<div class="list-group projects-list">
+				<span class="list-group-item list-group-item-title noselect">
+					<p class="list-group-item-text"><strong>My Assigned Projects</strong><span class="pull-right show-projects"><i class="fa fa-plus-square-o"></i></span></p>
+				</span>
+				<?php foreach($projects AS $project) { ?>
+				<a href="<?php echo $this->webroot; ?>projects/view/<?php echo $project['Project']['id']; ?>" class="list-group-item">
+					<p class="list-group-item-text"><?php echo $project['Project']['title']; ?></p>
+				</a>
+				<?php } ?>
+			</div>
+		<?php } ?>
 	</div>
 	<div class="col-md-8 col-md-pull-4">
 		<div class="list-group activity-list">
