@@ -6,14 +6,13 @@
 		$project_groups[$id] = $project['Project']['group'];
 	}
 	$project_groups = array_unique($project_groups);
-?>
-<!-- app/View/Tickets/add.ctp -->
-<?php
+
 	$project_titles = array('0' => 'Add A New Project');
 	foreach($projects AS $key => $project) {
 		$id = $project['Project']['id'];
 		$project_titles[$id] = $project['Project']['title'];
 	}
+
 	$user_names = array('0' => 'Add A New User');
 	foreach($users AS $key => $user) {
 		$id = $user['User']['id'];
@@ -39,7 +38,7 @@
 			</div>
 		</form>
 	</div>
-	<div class="tickets col-md-8 col-md-pull-4">
+	<div class="projects col-md-8 col-md-pull-4">
 		<?php echo $this->Form->create('Project'); ?>
 			<fieldset>
 				<legend><?php echo __('Add Project'); ?></legend>

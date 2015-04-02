@@ -60,9 +60,9 @@ You can use the included `install.sql` file to create the table structure.
 
 If you prefer, you can import the install.sql file from the Import tab of the database in phpMyAdmin.
 
-## Creating a New User
+## Create Your User
 
-To create a new user, first you must edit `app/Controller/AppController.php` and look for the following line:
+To create a user to sign in with, first you must edit `app/Controller/AppController.php` and look for the following line:
 
     $this->Auth->allow('login', 'logout');
 

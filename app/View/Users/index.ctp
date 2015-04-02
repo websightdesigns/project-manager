@@ -8,7 +8,7 @@
 <div class="row">
 	<div class="col-md-4 col-md-push-8">
 		<div class="newbtn">
-			<a href="<?php echo $this->webroot; ?>projects/add" class="btn btn-success btn-block">New User</a>
+			<a href="<?php echo $this->webroot; ?>users/add" class="btn btn-success btn-block">New User</a>
 		</div>
 		<form role="form">
 			<div class="form-group">
@@ -37,19 +37,21 @@
 	<div class="col-md-8 col-md-pull-4">
 		<form class="form">
 			<?php
-				foreach($teams AS $team) {
-					$team_names[$team['Team']['id']] = $team['Team']['name'];
+				if(!empty($teams) && is_array($teams)) {
+					foreach($teams AS $team) {
+						$team_names[$team['Team']['id']] = $team['Team']['name'];
+					}
+					$selected = array('4', '5');
+					echo $this->Form->input('teams', array(
+						'options' => $team_names,
+						'selected' => $selected,
+						'empty' => true,
+						'label' => '',
+						'class' => 'chosen',
+						'multiple' => true,
+						'div' => array('style' => 'width:100%;margin-bottom:2em;')
+					));
 				}
-				$selected = array('4', '5');
-				echo $this->Form->input('teams', array(
-					'options' => $team_names,
-					'selected' => $selected,
-					'empty' => true,
-					'label' => '',
-					'class' => 'chosen',
-					'multiple' => true,
-					'div' => array('style' => 'width:100%;margin-bottom:2em;')
-				));
 			?>
 		</form>
 		<div class="list-group">
