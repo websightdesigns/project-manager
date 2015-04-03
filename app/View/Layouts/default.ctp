@@ -115,7 +115,7 @@ $companyName = __d('cake_dev', 'webSIGHTdesigns, Inc.');
 						<ul class="usermenu">
 							<li class="notifications">
 								<a href="#" rel="notifications" class="popover-link" data-title="Notifications">
-									<span class="label label-primary">50</span>
+									<span class="label label-primary">0</span>
 								</a>
 							</li>
 							<li><span class="glyphicon glyphicon-user"></span> <a href="<?php echo $this->webroot; ?>users/edit/<?php echo $this->Session->read('Auth.User.id'); ?>"><?php echo ($this->Session->read('Auth.User.name') ? $this->Session->read('Auth.User.name') : 'Welcome'); ?></a></li>
