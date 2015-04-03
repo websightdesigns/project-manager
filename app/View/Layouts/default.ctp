@@ -102,6 +102,9 @@ $companyName = __d('cake_dev', 'webSIGHTdesigns, Inc.');
 	<div id="wrap">
 
 		<?php if($this->Session->read('Auth.User')) { ?>
+			<?php
+
+			?>
 			<div id="topmenu-wrapper" class="container">
 				<div class="col-lg-12">
 					<div id="topmenu">
@@ -115,7 +118,7 @@ $companyName = __d('cake_dev', 'webSIGHTdesigns, Inc.');
 									<span class="label label-primary">50</span>
 								</a>
 							</li>
-							<li><span class="glyphicon glyphicon-user"></span> <a href="<?php echo $this->webroot; ?>users/edit/1">John Doe</a></li>
+							<li><span class="glyphicon glyphicon-user"></span> <a href="<?php echo $this->webroot; ?>users/edit/<?php echo $this->Session->read('Auth.User.id'); ?>"><?php echo ($this->Session->read('Auth.User.name') ? $this->Session->read('Auth.User.name') : 'Welcome'); ?></a></li>
 							<li><span class="glyphicon glyphicon-cog"></span> <a href="<?php echo $this->webroot; ?>settings/">Settings</a></li>
 							<li class="hidden-xs"><span class="glyphicon glyphicon-off"></span> <a href="<?php echo $this->webroot; ?>users/logout/"><i class="icon-off icon-white"></i>Sign Out</a></li>
 						</ul>

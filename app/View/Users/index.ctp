@@ -34,7 +34,7 @@
 			</select>
 		</div>
 	</div>
-	<div class="col-md-8 col-md-pull-4">
+	<div class="users section col-md-8 col-md-pull-4">
 		<form class="form">
 			<?php
 				if(!empty($teams) && is_array($teams)) {

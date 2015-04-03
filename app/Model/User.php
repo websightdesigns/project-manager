@@ -12,7 +12,7 @@
 			}
 
 			// prepare the teams
-			if(is_array($this->data[$this->alias]['teams'])) {
+			if(isset($this->data[$this->alias]['teams']) && is_array($this->data[$this->alias]['teams'])) {
 				$teams = implode(',', $this->data[$this->alias]['teams']);
 				$this->data[$this->alias]['teams'] = $teams;
 			}

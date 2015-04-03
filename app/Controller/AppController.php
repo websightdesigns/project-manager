@@ -73,12 +73,12 @@ class AppController extends Controller {
 	 *
 	 * @return array
 	 */
-	public function getUserName($user_id) {
-		$this->loadModel('User');
-		$user = $this->User->find('first', array(
-			'conditions' => array('User.id' => $user_id)
-		));
-		return $user['User']['first_name'] . ' ' . substr($user['User']['last_name'], 0, 1);
-	}
+	// public function getUserName($user_id) {
+	// 	$this->loadModel('User');
+	// 	$user = $this->User->find('first', array(
+	// 		'conditions' => array('User.id' => $user_id)
+	// 	));
+	// 	return $user['User']['first_name'] . ' ' . substr($user['User']['last_name'], 0, 1);
+	// }
 
 }

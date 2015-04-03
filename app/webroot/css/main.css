@@ -171,6 +171,9 @@ h1, .h1 {
 }
 #TicketProjectTitleGroup,
 #TicketMilestoneTitleGroup { display: none; }
+.usermenu .notifications .label {
+  display: table;
+}
 @media (min-width: 768px) {
   body {
     /*font-weight: 200;*/
@@ -268,7 +271,6 @@ h1, .h1 {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-
 html,
 body {
   height: 100%;
@@ -388,18 +390,17 @@ body {
 /* Not required for template or sticky footer method. */
 
 #wrap #main {
+  margin-bottom: 2em;
   padding: 0 15px;
 }
 .container .text-muted {
   margin: 20px 0;
   /*font-weight: 200;*/
 }
-
 #footer > .container {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 code {
   font-size: 80%;
 }

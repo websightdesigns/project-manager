@@ -18,7 +18,7 @@
 			</div>
 		</form>
 	</div>
-	<div class="users col-md-8 col-md-pull-4">
+	<div class="users section col-md-8 col-md-pull-4">
 		<?php echo $this->Form->create('User'); ?>
 			<fieldset>
 				<legend><?php echo __('Add User'); ?></legend>
@@ -35,6 +35,13 @@
 					'empty' => true,
 					'class' => 'form-control',
 					'placeholder' => 'Password',
+					'div' => array( 'class' => 'form-group' )
+				));
+				echo $this->Form->input('name', array(
+					'label' => 'Name',
+					'empty' => true,
+					'class' => 'form-control',
+					'placeholder' => 'Name',
 					'div' => array( 'class' => 'form-group' )
 				));
 				// if($this->Session->read('Auth.User.role') == "admin") {
