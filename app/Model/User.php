@@ -7,7 +7,7 @@
 		public function beforeSave($options = array()) {
 
 			// prepare the password
-			if (isset($this->data[$this->alias]['pwd'])) {
+			if (!empty($this->data[$this->alias]['pwd']) && isset($this->data[$this->alias]['pwd'])) {
 				$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['pwd']);
 			}
 
