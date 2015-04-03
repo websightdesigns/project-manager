@@ -18,6 +18,7 @@
                 'placeholder' => 'Username'
             ));
             echo $this->Form->input('password', array(
+                'type' => 'password',
                 'class' => 'form-control',
                 'required' => true,
                 'placeholder' => 'Password'

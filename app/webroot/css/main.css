@@ -178,6 +178,16 @@ h1, .h1 {
   line-height: 1.2;
   padding: 1em 0.75em;
 }
+.btn-fullwidth,
+.btn-fullwidth .btn {
+  width: 100%;
+}
+.btn-fullwidth {
+  margin-bottom: 1em;
+}
+.tab-pane {
+  padding-top: 1em;
+}
 @media (min-width: 768px) {
   body {
     /*font-weight: 200;*/

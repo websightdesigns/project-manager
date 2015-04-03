@@ -19,11 +19,11 @@
 		</form>
 	</div>
 	<div class="users section col-md-8 col-md-pull-4">
-		<?php echo $this->Form->create('User'); ?>
+		<?php echo $this->Form->create('User', array('autocomplete' => 'off')); ?>
 			<fieldset>
 				<legend><?php echo __('Add User'); ?></legend>
 				<?php
-				echo $this->Form->input('username', array(
+				echo $this->Form->input('new_username', array(
 					'empty' => true,
 					'class' => 'form-control',
 					'placeholder' => 'Username',

@@ -6,6 +6,17 @@
 
 <div class="row">
 	<div class="col-md-4 col-md-push-8">
+		<div class="btn-group btn-fullwidth">
+		  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				Quick Add <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		    <li><a href="<?php echo $this->webroot; ?>projects/add">New Project</a></li>
+		    <li><a href="<?php echo $this->webroot; ?>tickets/add">New Ticket</a></li>
+		    <li><a href="<?php echo $this->webroot; ?>milestones/add">New Milestone</a></li>
+		    <li><a href="<?php echo $this->webroot; ?>users/add">New User</a></li>
+		  </ul>
+		</div>
 		<form role="form">
 			<div class="form-group">
 		  		<div class="input-group">
