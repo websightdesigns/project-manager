@@ -30,6 +30,9 @@ h1, .h1 {
 .navbar-inverse {
   border-color: #999;
 }
+.navbar-inverse .navbar-toggle {
+  border-color: #15507B;
+}
 .navbar-inverse .nav > li > a {
   color: #ccc;
   font-size: 100% !important;
@@ -188,6 +191,10 @@ h1, .h1 {
 .tab-pane {
   padding-top: 1em;
 }
+
+/* Responsive styles
+-------------------------------------------------- */
+
 @media (min-width: 768px) {
   body {
     /*font-weight: 200;*/
@@ -253,6 +260,7 @@ h1, .h1 {
     border-bottom-left-radius: 0;
   }
 }
+
 @media (max-width: 991px) {
   .list-group-item-title {
     border-bottom-right-radius: 4px;
@@ -280,6 +288,11 @@ h1, .h1 {
   }
   #topmenu ul.usermenu {
     padding-right: 0.3em;
+  }
+}
+@media (max-width: 360px) {
+  #topmenu {
+    display: block;
   }
 }
 
