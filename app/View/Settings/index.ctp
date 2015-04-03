@@ -121,7 +121,9 @@
 										echo $this->Form->input('headerlogo', array(
 											'label' => '',
 											'default' => $headerlogo,
-											'between' => '<p class="text-info">A URL relative to the web root for the header logo</p>'
+											'between' => '<p class="text-info">A URL relative to the web root for the header logo</p>',
+											'empty' => true,
+											'class' => 'form-control'
 										));
 									?>
 								</div>
@@ -131,6 +133,8 @@
 											'label' => '',
 											'default' => $headerlogo,
 											'between' => '<p class="text-info">Upload a file for the header logo</p>',
+											'empty' => true,
+											'class' => 'form-control',
 											'type' => 'file'
 										));
 									?>
@@ -139,13 +143,13 @@
 						</div>
 					</div>
 					<div class="tab-pane" id="users">
-						<h3>User Roles</h3>
+						<p>Coming soon.</p>
 					</div>
 					<div class="tab-pane" id="projects">
-
+						<p>Coming soon.</p>
 					</div>
 					<div class="tab-pane" id="notices">
-
+						<p>Coming soon.</p>
 					</div>
 				</div>
 			</div>
