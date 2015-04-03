@@ -46,9 +46,9 @@
 					<li class="active"><a href="#general" data-toggle="tab">General</a></li>
 					<li><a href="#site" data-toggle="tab">Site</a></li>
 					<li><a href="#theme" data-toggle="tab">Theme</a></li>
-					<li><a href="#users" data-toggle="tab">Users</a></li>
+					<!-- <li><a href="#users" data-toggle="tab">Users</a></li>
 					<li><a href="#projects" data-toggle="tab">Projects</a></li>
-					<li><a href="#notices" data-toggle="tab">Notifications</a></li>
+					<li><a href="#notices" data-toggle="tab">Notifications</a></li> -->
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="general">
@@ -142,7 +142,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="tab-pane" id="users">
+					<!-- <div class="tab-pane" id="users">
 						<p>Coming soon.</p>
 					</div>
 					<div class="tab-pane" id="projects">
@@ -150,7 +150,7 @@
 					</div>
 					<div class="tab-pane" id="notices">
 						<p>Coming soon.</p>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		<?php } else { ?>
