@@ -33,6 +33,9 @@ class MilestonesController extends AppController {
 		$this->loadModel('Project');
 		$this->set('projects', $this->Project->find('all'));
 
+		$this->loadModel('Ticket');
+		$this->set('tickets', $this->Ticket->find('all'));
+
 		$this->loadModel('User');
 		$this->set('users', $this->User->find('all'));
 
@@ -59,11 +62,21 @@ class MilestonesController extends AppController {
 	 * @return void
 	 */
 	public function view($id = null) {
+		// set the milestone id
 		$this->Milestone->id = $id;
+		// set the parent project into a variable
+		$project_id = $this->Milestone->project_id;
+		$this->set('project', $this->Milestone->read(null, $project_id));
+		// set the milestone tickets into a variable
+		$tickets = $this->Ticket->find('all', array(
+			'conditions' => array('Ticket.milestone_id' => $this->Milestone->id)
+		));
+		// thrown an exception error if milestone id is invalid
 		if (!$this->Milestone->exists()) {
-			throw new NotFoundException(__('Invalid milestones'));
+			throw new NotFoundException(__('Invalid milestone.'));
 		}
-		$this->set('milestones', $this->Milestone->read(null, $id));
+		// set the milestone variable
+		$this->set('milestone', $this->Milestone->read(null, $id));
 	}
 
 	/**

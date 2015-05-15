@@ -22,12 +22,12 @@ This web application is intended to be cloned and placed on a web server running
 
 ## More Information
 
-Visit the Project Manager at [http://websightdesigns.com/projects/](http://websightdesigns.com/projects/)
+Visit a demo of the Project Manager at [http://websightdesigns.com/projects/](http://websightdesigns.com/projects/)
 
-Visit the [Project Manager Wiki](http://websightdesigns.com/wiki/Project_Manager) for more information.
+Visit the [Project Manager wiki page](http://websightdesigns.com/wiki/Project_Manager) for more information.
 
-[Install Instructions](http://websightdesigns.com/wiki/Project_Manager_Install_Instructions) are available on our wiki or in the included INSTALL file.
+For install instructions, visit the [Project Manager Install Instructions wiki page](http://websightdesigns.com/wiki/Project_Manager_Install_Instructions) or view the included `INSTALL.md` file.
 
 ## Our Website
 
-Please visit the [WebSight Designs](http://websightdesigns.com/) website for more information.
+Our website is available at [websightdesigns.com](http://websightdesigns.com/).
