@@ -1,4 +1,4 @@
-[![WebSight Designs](http://www.websightdesigns.com/img/headerlogo-light.png)](http://www.websightdesigns.com)
+[![WebSight Designs](http://www.websightdesigns.com/img/logo.png)](http://www.websightdesigns.com)
 
 # Project Manager
 
