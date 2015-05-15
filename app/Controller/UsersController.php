@@ -30,9 +30,6 @@ class UsersController extends AppController {
     public function beforeFilter() {
         parent::beforeFilter();
 
-        // set up pagination
-        $limit = (Configure::read('AppSettings.itemsperpage') ? Configure::read('AppSettings.itemsperpage'): '5');
-
         // projects model
         $this->loadModel('Project');
         $this->set('projects', $this->Project->find('all'));
@@ -79,16 +76,16 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
 
-                if (!empty($this->data)) {
-                    if (empty($this->data['User']['rememberme'])) {
+                if (!empty($this->request->data)) {
+                    if (empty($this->request->data['User']['rememberme'])) {
                         $this->Cookie->delete('User');
                     } else {
                         $cookie = array();
-                        $cookie['username'] = $this->data['User']['username'];
-                        $cookie['token']    = $this->data['User']['password'];
+                        $cookie['username'] = $this->request->data['User']['username'];
+                        $cookie['token']    = $this->request->data['User']['password'];
                         $this->Cookie->write('User', $cookie, true, '+2 weeks');
                     }
-                    unset($this->data['User']['rememberme']);
+                    unset($this->request->data['User']['rememberme']);
                 }
 
                 $this->redirect($this->Auth->redirectUrl('/'));
@@ -100,7 +97,7 @@ class UsersController extends AppController {
 
     public function logout() {
         $this->Cookie->delete('User');
-        $this->Session->destroy();
+        // $this->Session->destroy();
         $this->redirect($this->Auth->logout());
     }
 
