@@ -22,8 +22,16 @@
 
 class UsersController extends AppController {
 
+    public $components = array(
+        'Paginator',
+        'RequestHandler'
+    );
+
     public function beforeFilter() {
         parent::beforeFilter();
+
+        // set up pagination
+        $limit = (Configure::read('AppSettings.itemsperpage') ? Configure::read('AppSettings.itemsperpage'): '5');
 
         // projects model
         $this->loadModel('Project');
@@ -67,8 +75,22 @@ class UsersController extends AppController {
     }
 
     public function login() {
+        $this->set('title_for_layout', "Please Sign In");
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
+
+                if (!empty($this->data)) {
+                    if (empty($this->data['User']['rememberme'])) {
+                        $this->Cookie->delete('User');
+                    } else {
+                        $cookie = array();
+                        $cookie['username'] = $this->data['User']['username'];
+                        $cookie['token']    = $this->data['User']['password'];
+                        $this->Cookie->write('User', $cookie, true, '+2 weeks');
+                    }
+                    unset($this->data['User']['rememberme']);
+                }
+
                 $this->redirect($this->Auth->redirectUrl('/'));
             } else {
                 $this->Session->setFlash(__('Invalid username or password, try again'), 'flash/error', array('heading' => 'Invalid Login'));
@@ -77,6 +99,7 @@ class UsersController extends AppController {
     }
 
     public function logout() {
+        $this->Cookie->delete('User');
         $this->Session->destroy();
         $this->redirect($this->Auth->logout());
     }
